@@ -5,7 +5,7 @@
 An example of building on top of [mjlab](https://github.com/mujocolab/mjlab) to teach a Unitree G1 humanoid to perform a **double spin kick**. The reference motion comes from Jason Peng's [MimicKit](https://github.com/xbpeng/MimicKit).
 
 **This repository provides:**
-- Data conversion script (MimicKit pkl → mjlab csv) with safe pose transitions and motion looping
+- Data conversion script (MimicKit pkl → mjlab csv)
 - Full training results and hyperparameters
 - Pretrained ONNX checkpoint for deployment
 - Deployment instructions for real hardware
@@ -78,6 +78,19 @@ MUJOCO_GL=egl CUDA_VISIBLE_DEVICES=0 uv run train.py \
 ```
 
 For full training details and reproducibility, see the [wandb report](https://api.wandb.ai/links/gcbc_researchers/nfi58457).
+
+## Evaluation
+
+To evaluate your trained policy, you'll need your wandb run path. You can find this in the run overview. It follows the format `{your-organization}/{project-name}/{run-id}`, where `run-id` is a unique 8-character identifier.
+
+Once you have your run path, evaluate the policy with:
+
+```bash
+uv run play.py \
+    Mjlab-Spinkick-Unitree-G1-Play \
+    --wandb-run-path {wandb-run-path} \
+    --num-envs 8
+```
 
 ## Deployment
 
