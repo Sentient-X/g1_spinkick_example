@@ -72,9 +72,9 @@ Follow the registry creation instructions in the mjlab [README](https://github.c
 ```bash
 MUJOCO_GL=egl CUDA_VISIBLE_DEVICES=0 uv run train.py \
     Mjlab-Spinkick-Unitree-G1 \
-    --registry-name {your-organization}/{registry-name}/mimickit_spinkick_safe \
-    --env.scene.num-envs 4096 \
-    --agent.max-iterations 20_000
+    --registry-name Technoculture/wandb-registry-motions/mimickit_spinkick_safe \
+    --env.scene.num-envs 8192 \
+    --agent.max-iterations 100_000
 ```
 
 For full training details and reproducibility, see the [wandb report](https://api.wandb.ai/links/gcbc_researchers/nfi58457).
