@@ -4,3 +4,4 @@ __pycache__/
 logs/
 *.npz
 *.mp4
+*.env
